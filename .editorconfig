@@ -1,0 +1,6 @@
+root = true
+
+# indent 4 spaces for all code files
+[*]
+indent_style = space
+indent_size = 4
