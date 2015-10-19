@@ -110,14 +110,14 @@ namespace Solita.Testing.EPiServer
 
         public IEnumerable<IContent> GetItems(IEnumerable<ContentReference> contentLinks, CultureInfo language)
         {
+            // Note: filtering by language parameter is not implemented.
             var items = contents.Values.Where(c => contentLinks.Contains(c.ContentLink));
             return items;
         }
 
         public IEnumerable<IContent> GetItems(IEnumerable<ContentReference> contentLinks, LoaderOptions settings)
         {            
-            var items = contents.Values.Where(c => contentLinks.Contains(c.ContentLink));
-            return items;
+            return GetItems(contentLinks, CultureInfo.CurrentCulture);
         }
 
         public IContent GetBySegment(ContentReference parentLink, string urlSegment, CultureInfo language)
@@ -167,6 +167,9 @@ namespace Solita.Testing.EPiServer
 
         public virtual T GetDefault<T>(ContentReference parentLink) where T : IContentData
         {
+
+            // Create a new block or page, depending on type.
+            // Note: need some way to hook to the creation process, to mock ContentAreas for example - maybe ContentEvents is enough?
 
             if (typeof(BlockData).IsAssignableFrom(typeof(T)))
             {
@@ -236,6 +239,16 @@ namespace Solita.Testing.EPiServer
             return Save(content, SaveAction.Publish, AccessLevel.NoAccess);
         }
 
+        /// <summary>
+        /// Saves content to repository.
+        /// </summary>
+        /// <remarks>
+        /// If content reference is not specified a new ID is generated.
+        /// Raises the appropriate content events.
+        /// For content that is versionable the publish status is updated.
+        /// However, new versions are not created at the moment (that may be implemented if needed).
+        /// Access permissions checking is not implemented.
+        /// </remarks>
         public ContentReference Save(IContent content, SaveAction action, AccessLevel access)
         {
 

@@ -167,6 +167,7 @@
     <Compile Include="CreateSharedBlock.cs" />
     <Compile Include="FakeContentEvents.cs" />
     <Compile Include="FakeContentRepository.cs" />
+    <Compile Include="FakeUrlResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
