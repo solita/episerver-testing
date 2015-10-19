@@ -7,7 +7,6 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAccess;
 using EPiServer.Security;
-using EPiServer.Web;
 
 namespace Solita.Testing.EPiServer
 {
