@@ -7,6 +7,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAccess;
 using EPiServer.Security;
+using EPiServer.Web;
 
 namespace Solita.Testing.EPiServer
 {
@@ -18,9 +19,9 @@ namespace Solita.Testing.EPiServer
     public class FakeContentRepository : IContentRepository
     {
 
-        private readonly Dictionary<ContentReference, IContent> contents = new Dictionary<ContentReference, IContent>();
+        protected readonly Dictionary<ContentReference, IContent> contents = new Dictionary<ContentReference, IContent>();
         private readonly FakeContentEvents contentEvents = new FakeContentEvents();
-        private int id = 1;
+        protected int id = 1;
 
         /// <summary>
         /// List of all contents in the repository.
@@ -165,11 +166,17 @@ namespace Solita.Testing.EPiServer
             throw new NotImplementedException();
         }
 
-        public T GetDefault<T>(ContentReference parentLink) where T : IContentData
+        public virtual T GetDefault<T>(ContentReference parentLink) where T : IContentData
         {
-            // Note: only works with pages
-            var content = CreatePage.OfType<T>(parentLink != null ? new PropertyPageReference(parentLink.ID) : null);
-            return content;
+
+            if (typeof(BlockData).IsAssignableFrom(typeof(T)))
+            {
+                return CreateSharedBlock.OfType<T>();
+            } else
+            {
+                return CreatePage.OfType<T>(parentLink != null ? new PropertyPageReference(parentLink.ID) : null);
+            }
+
         }
 
         public T GetDefault<T>(ContentReference parentLink, CultureInfo language) where T : IContentData
