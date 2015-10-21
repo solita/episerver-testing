@@ -6,6 +6,7 @@ types.
 ## What's included
 
 * FakeContentRepository: simplified fake implementation of content repository.
+* FakeContentArea: content area with no dependency to EPiServer context.
 * FakeUrlResolver: simplified fake implementation of UrlResolver.
 * CreatePage/CreateSharedBlock: factories for creating instances of pages and shared blocks. 
 These handle all the necessary proxy magic.
