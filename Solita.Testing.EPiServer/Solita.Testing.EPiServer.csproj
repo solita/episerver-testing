@@ -165,6 +165,7 @@
   <ItemGroup>
     <Compile Include="CreatePage.cs" />
     <Compile Include="CreateSharedBlock.cs" />
+    <Compile Include="FakeContentArea.cs" />
     <Compile Include="FakeContentEvents.cs" />
     <Compile Include="FakeContentRepository.cs" />
     <Compile Include="FakeUrlResolver.cs" />
