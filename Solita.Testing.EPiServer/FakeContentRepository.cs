@@ -80,22 +80,22 @@ namespace Solita.Testing.EPiServer
 
         public IEnumerable<T> GetChildren<T>(ContentReference contentLink, CultureInfo language) where T : IContentData
         {
-            throw new NotImplementedException();
+            return GetChildren<T>(contentLink);
         }
 
         public IEnumerable<T> GetChildren<T>(ContentReference contentLink, LoaderOptions settings) where T : IContentData
         {
-            throw new NotImplementedException();
+            return GetChildren<T>(contentLink);
         }
 
         public IEnumerable<T> GetChildren<T>(ContentReference contentLink, CultureInfo language, int startIndex, int maxRows) where T : IContentData
         {
-            throw new NotImplementedException();
+            return GetChildren<T>(contentLink);
         }
 
         public IEnumerable<T> GetChildren<T>(ContentReference contentLink, LoaderOptions settings, int startIndex, int maxRows) where T : IContentData
         {
-            throw new NotImplementedException();
+            return GetChildren<T>(contentLink);
         }
 
         public IEnumerable<ContentReference> GetDescendents(ContentReference contentLink)
