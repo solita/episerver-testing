@@ -11,5 +11,9 @@
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Copyright 2015 Solita</copyright>
     <tags>EPiServer Testing .NET ASP.NET MVC</tags>
+	<dependencies>
+      <dependency id="EPiServer.CMS.Core" version="[8.0.0,9.99.99]" />
+      <dependency id="EPiServer.Framework" version="[8.0.0,9.99.99]" />
+    </dependencies> 
   </metadata>
 </package>
