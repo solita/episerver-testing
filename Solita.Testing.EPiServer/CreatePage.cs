@@ -5,7 +5,7 @@ using EPiServer.SpecializedProperties;
 namespace Solita.Testing.EPiServer
 {
 
-    // Code taken from EPiAbstractions, https://github.com/MikeHook/EPiAbstractions
+    // Initial code taken from EPiAbstractions, https://github.com/MikeHook/EPiAbstractions
     public class CreatePage
     {
 

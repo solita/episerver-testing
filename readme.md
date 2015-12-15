@@ -35,4 +35,4 @@ public void TestArticleImport()
 
 Source code is in [Solita's Github repository](https://github.com/solita-episerver/solita-testing-episerver).
 
-Master branch is automatically compiled into a nuget in Solita's internal nuget feed.
+Master branch is automatically compiled into a nuget in Solita's [public nuget feed](https://www.myget.org/gallery/solita-episerver/).
