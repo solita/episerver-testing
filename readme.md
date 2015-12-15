@@ -13,7 +13,7 @@ These handle all the necessary proxy magic.
 
 ## Requirements
 
-.NET 4.6 (for the test project). Currently bound against EPiServer CMS 8.11, but should be compatible with newer versions as well.
+.NET 4.6 (for the test project). Currently bound against EPiServer CMS 9.3.2, but should be compatible with newer versions as well.
 
 ## Usage example
 
@@ -33,6 +33,6 @@ public void TestArticleImport()
 
 ## Source code
 
-Source code is in [a Git repository in Solita's Deveo](https://deus.solita.fi/Solita/projects/episerver/repositories/solita-testing-episerver/tree/master).
+Source code is in [Solita's Github repository](https://github.com/solita-episerver/solita-testing-episerver).
 
 Master branch is automatically compiled into a nuget in Solita's internal nuget feed.
