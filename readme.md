@@ -31,8 +31,6 @@ public void TestArticleImport()
 }    
 ```
 
-## Source code
-
-Source code is in [Solita's Github repository](https://github.com/solita-episerver/solita-testing-episerver).
+## CI
 
 Master branch is automatically compiled into a nuget in Solita's [public nuget feed](https://www.myget.org/gallery/solita-episerver/).
