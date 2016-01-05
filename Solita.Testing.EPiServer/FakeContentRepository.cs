@@ -279,7 +279,6 @@ namespace Solita.Testing.EPiServer
                 if (content is IVersionable)
                 {
                     var versionable = (IVersionable)content;
-                    versionable.StopPublish = DateTime.MaxValue;
                     versionable.Status = VersionStatus.Published;
                     versionable.IsPendingPublish = false;                    
                 }
